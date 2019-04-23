@@ -28,21 +28,30 @@ function ZTokenList (el) {
   })
 }
 
-
 ZTokenList.prototype = {
-  add: function (className) {
-    if (![].includes.call(this, className)) {
-      [].push.call(this, className);
-      this.value = [].join.call(this, ' ');
+  add: function () {
+    var args = arguments;
+    var list = [].slice.call(args);
+    for (var i = 0; i < list.length; i++) {
+      var className = list[i]
+      if (![].includes.call(this, className)) {
+        [].push.call(this, className);
+      }
     }
+    this.value = [].join.call(this, ' ');
   },
 
   remove: function (className) {
-    if ([].includes.call(this, className)) {
-      var index = [].indexOf.call(this, className);
-      [].splice.call(this, index, 1);
-      this.value = [].join.call(this, ' ');
+    var args = arguments;
+    var list = [].slice.call(args);
+    for (var i = 0; i < list.length; i++) {
+      var className = list[i]
+      if ([].includes.call(this, className)) {
+        var index = [].indexOf.call(this, className);
+        [].splice.call(this, index, 1);
+      }
     }
+    this.value = [].join.call(this, ' ');
   },
 
   contains: function (className) {
@@ -59,7 +68,7 @@ ZTokenList.prototype = {
       this.remove(className);
       return false;
     }
-  }
+  },
 }
 
 Object.defineProperty(HTMLElement.prototype, 'zClassList', {
