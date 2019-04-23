@@ -22,12 +22,12 @@
 在 chrome 中打印它的 classList 
 
 ```js
-var box = document.querySelector('#box');
-var classArray = box.classList;
-console.log(classArray);
+var box = document.querySelector('#box')
+var classArray = box.classList
+console.log(classArray)
 ```
 
-![classList](./assets/classList.png);
+![classList](./assets/classList.png)
 
 可以看到 classList 是一个类数组的数据结构，每一项元素都是一个类名，length 属性表示元素类名的个数。
 
@@ -38,9 +38,9 @@ console.log(classArray);
 add() 方法接收**一个或多个类**名字符串参数，表示往类名列表中添加一个或多个类名。如果之前类名存在，则忽略此类名添加。
 
 ```js
-classArray.add('blue');
+classArray.add('blue')
 
-classArray.add('blue', 'red');
+classArray.add('blue', 'red')
 ```
 
 + **移除类名 remove()**
@@ -48,9 +48,9 @@ classArray.add('blue', 'red');
 与 add() 方法相似，remove() 也接收**一个或多个**类名字符串参数，但是其意义正好相反，remove() 表示往类名列表中移除一个或多个类名。如果类名不存在，则忽略此类名的移除。
 
 ```js
-classArray.remove('red');
+classArray.remove('red')
 
-classArray.remove('a', 'b');
+classArray.remove('a', 'b')
 ```
 
 + **判断是否包含某个类名**
@@ -61,7 +61,7 @@ contains() 方法接收一个类名字符串参数，判断类名列表中是否
 classArray.contains('red')
 ```
 
-+**替换类名 replace()**
++ **替换类名 replace()**
 
 replace() 方法接收两个个类名字符串参数，用第二个类名替换第一个类名。如果原类名列表并不存在第一个类名，则替换失败返回false，反之则替换成功，返回true，
 
@@ -81,5 +81,5 @@ classArray.toggle('green')
 toggle() 方法还可以接收第二个参数，如果第二个参数为 true，则添加类名，并返回 true，反之删除类名并返回 false
 
 ```js
-classArray.toggle('fl', 20 > 10);
+classArray.toggle('fl', 20 > 10)
 ```
