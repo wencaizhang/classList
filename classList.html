@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>classList</title>
+</head>
+<body>
+
+
+  <span id="span"></span>
+  <a href="" id="link"></a>
+  
+  <div id="box" class=" red  blue    green ">我是一个 div</div>
+
+  <script src="./classList.js"></script>
+  <script>
+
+
+
+    var box = document.querySelector('#box');
+
+
+
+    // var classArray = box.classList;
+
+    // // 添加类名
+    // classArray.add('blue')
+
+    // // 移除类名
+    // classArray.remove('red')
+
+    // // 判断是否包含某个类名
+    // classArray.contains('red')
+
+    // // 替换，用新类名替换原有类名，如果并不存在指定的原有类名，则替换失败
+    // // 如果替换成功，返回true，否则返回false
+    // classArray.replace('xxx', 'yyy')
+
+    // // 切换类名：如果存在类名，则删除它，然后返回false，如果不存在，则添加它，然后返回 true。
+    // classArray.toggle('green')
+
+    // // toggle 还可以接收第二个参数，如果第二个参数为 true，则添加类名，并返回 true，反之删除类名并返回 false
+    // classArray.toggle('fl', 20 > 10);
+
+  </script>
+</body>
+</html>
