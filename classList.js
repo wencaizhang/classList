@@ -29,12 +29,16 @@ function ZTokenList (el) {
 }
 
 ZTokenList.prototype = {
+  contains: function (className) {
+    return [].includes.call(this, className);
+  },
+
   add: function () {
     var args = arguments;
     var list = [].slice.call(args);
     for (var i = 0; i < list.length; i++) {
       var className = list[i]
-      if (![].includes.call(this, className)) {
+      if (!this.contains(className)) {
         [].push.call(this, className);
       }
     }
@@ -46,7 +50,7 @@ ZTokenList.prototype = {
     var list = [].slice.call(args);
     for (var i = 0; i < list.length; i++) {
       var className = list[i]
-      if ([].includes.call(this, className)) {
+      if (this.contains(className)) {
         var index = [].indexOf.call(this, className);
         [].splice.call(this, index, 1);
       }
@@ -54,20 +58,28 @@ ZTokenList.prototype = {
     this.value = [].join.call(this, ' ');
   },
 
-  contains: function (className) {
-    return [].includes.call(this, className);
-  },
-
-  toggle: function (className) {
-    var flag = [].includes.call(this, className);
-
+  toggle: function (className, bool) {
+    var flag = this.contains(className);
+    if (typeof bool === 'boolean') {
+      bool ? this.add(className) : this.remove(className);
+      return bool;
+    }
     if (flag) {
-      this.add(className);
-      return true;
-    } else {
       this.remove(className);
       return false;
+    } else {
+      this.add(className);
+      return true;
     }
+  },
+
+  replace: function (oldName, newName) {
+    if (this.contains(oldName)) {
+      this.remove(oldName);
+      this.add(newName);
+      return true;
+    }
+    return false;
   },
 }
 
