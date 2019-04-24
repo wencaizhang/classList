@@ -32,6 +32,15 @@ console.log(classArray)
 可以看到 classList 是一个类数组的数据结构，每一项元素都是一个类名，length 属性表示元素类名的个数。
 
 ### 以下是常用 API：
++ **item()**
+
+item() 支持一个参数，为类名的索引，返回对应的类名：
+
+```js
+classArray.item(0);  // a
+```
+
+如果索引超出范围，则返回 undefined。
 
 + **添加类名 add()**
 
