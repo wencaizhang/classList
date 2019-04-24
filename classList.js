@@ -33,6 +33,10 @@ ZTokenList.prototype = {
     return [].includes.call(this, className);
   },
 
+  item: function (index) {
+    return this[index];
+  },
+
   add: function () {
     var args = arguments;
     var list = [].slice.call(args);
