@@ -92,3 +92,9 @@ toggle() 方法还可以接收第二个参数，如果第二个参数为 true，
 ```js
 classArray.toggle('fl', 20 > 10)
 ```
+
+
+
+## classList 兼容行
+
+![classList 兼容性](./assets/caniuse-classList.png)
