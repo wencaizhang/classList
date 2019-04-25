@@ -1,5 +1,6 @@
 # 实现一个 classList
 
+> 不用 jquery 也可以愉快的操作类名了！
 
 原生DOM API classList 提供了很方便的操作元素类名的方法（add, remove, toggle 等），但美中不足的是，仅支持 IE10 以上。
 
@@ -98,3 +99,5 @@ classArray.toggle('fl', 20 > 10)
 ## classList 兼容行
 
 ![classList 兼容性](./assets/caniuse-classList.png)
+
+[classList 兼容性](https://caniuse.com/#search=classList)
