@@ -96,7 +96,9 @@ classArray.toggle('fl', 20 > 10)
 
 
 
-## classList 兼容行
+## classList 兼容性
+
+在下图中可以看出，`classList` 仅支持 IE10+ 和 安卓 3.0 以上版本。
 
 ![classList 兼容性](./assets/caniuse-classList.png)
 
